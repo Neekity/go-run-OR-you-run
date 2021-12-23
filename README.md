@@ -1,2 +1,1 @@
-# go_run_or_you_run
-golang居然能这样玩
+##程序和你有一个能跑就行
