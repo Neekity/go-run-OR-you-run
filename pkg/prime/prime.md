@@ -1,7 +1,7 @@
-## 使用协程并发进行素数筛选法真的快得飞起吗？
+### 使用协程并发进行素数筛选法真的快得飞起吗？
 素数的刷选方法非常适用于channel的设计理念，一想到使用协程并发筛选素数岂不是能瞬秒传统单线程，心里乐开了花。
 ***
-**PrimeA和PrimeB使用并发实现素数的筛选，PrimeS采用单线程进行素数的筛选**
+**PrimeA和PrimeB使用并发实现素数的筛选，PrimeS采用单线程进行素数的筛选,PrimeSS则是采用PrimeA的算法思路使用单线程进行运算**
 ***
 PrimeA的核心逻辑如下代码
 ``` golang
@@ -33,11 +33,12 @@ PrimeB的核心思路与PrimeA一致，只不过采用了递归的思想。注�
 goos: darwin
 goarch: arm64
 pkg: neekity/go-run-OR-you-run/pkg/prime
-BenchmarkPrimeA-8            698           1639675 ns/op
-BenchmarkPrimeB-8            735           1633192 ns/op
-BenchmarkPrimeS-8         196308              5274 ns/op
+BenchmarkPrimeA-8            686           1627958 ns/op
+BenchmarkPrimeB-8            736           1624786 ns/op
+BenchmarkPrimeS-8         222238              5273 ns/op
+BenchmarkPrimeSS-8        334665              3587 ns/op
 PASS
-ok      neekity/go-run-OR-you-run/pkg/prime     4.111s
+ok      neekity/go-run-OR-you-run/pkg/prime     5.606s
 ```
 单线程的处理方式简直甩协程并发方式好几条街啊。
 

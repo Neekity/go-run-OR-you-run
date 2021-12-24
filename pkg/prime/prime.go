@@ -43,6 +43,27 @@ func PrimeS(n int) (res []int) {
 	return
 }
 
+func PrimeSS(n int) (res []int) {
+	primeHelp := make([]int, n+1)
+	for idx := 2; idx < n; idx += 1 {
+		primeHelp[idx] = 1
+	}
+	for i := 2; i < n; i++ {
+		if primeHelp[i] == 1 {
+			for j := i * i; j < n; j += i {
+				primeHelp[j] = 0
+			}
+		}
+	}
+	for idx := 2; idx < n; idx += 1 {
+		if primeHelp[idx] == 1 {
+			res = append(res, idx)
+		}
+
+	}
+	return
+}
+
 func pushNumber2Channel(origin chan int, n int) {
 	for num := 2; num < n; num++ {
 		origin <- num
