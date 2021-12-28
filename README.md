@@ -8,7 +8,10 @@ goroutine：教练我想并发筛选素数
 [为啥并发筛选素数还慢了👈](./pkg/prime/prime.md)
 ***
 行：循环复制先遍历我
+
 列：循环复制先遍历我
+
 我：都别吵，我有几个G的Cache Memory，你们随便整
+
 
 [求求你还是先遍历行，不然我要破产了👈](pkg/whynotcolumnfirst/whynotcolumnfirst.md)
